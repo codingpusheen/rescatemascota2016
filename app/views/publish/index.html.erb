@@ -1,0 +1,70 @@
+<%= form_for(Pet.new,  :url => { :action => "create" } ) do |f| %>
+
+	<h3 class="page-header">Publica a tu mascota</h3>
+
+	<div class="row row-centered">
+		<div class="col-xs-12 col-md-6">
+			<%= image_tag "upload.png", :class => "img-rounded img-responsive" %>
+			<h3><small>Aquí se mostrará la foto que elijas subir</small></h3>
+			
+			 <button type="button" class="btn btn-primary btn-block btn-lg" style="margin-bottom: 50px">Subir Foto</button>
+		</div>
+		<div class="col-xs-10 col-md-5 center-block">
+				<div class="form-group col-md-12">
+					 <label for="usr">Nombre de la mascota:</label>
+					 <%= f.text_field :name,  :placeholder => "Pantera", :class => "form-control" %>
+				</div>
+				<div class="form-group col-md-12">
+				  	<label for="sel1">Especie:</label>
+					<%= f.select :specie, options_for_select([['Gato', 1], ['Perro', 2]]), {}, {class: "form-control"}%>
+				</div>
+				<div class="form-group col-md-3">
+				  	<label for="sel1">Edad:</label>
+				  	<%= f.select :age, (0..25), {}, {class: "form-control"} %>
+				</div>
+
+				<div class="form-group col-md-12">
+				  	<label for="sel1">Género:</label>
+					<%= f.select :genre, options_for_select([['Macho', 1], ['Hembra', 2], ['No lo se', 3]]), {}, {class: "form-control"}%>
+				</div>
+
+				<div class="form-group col-md-12">
+				  	<label for="sel1">Vacunas:</label>
+				  	<%= f.select :vaccine, options_for_select([
+				  		['Vacunas al día', 1], 
+				  		['Tiene vacunas pero no me acuerdo cuales ni de la última vez', 2], 
+				  		['No se si tiene sus vacunas', 3],
+				  		['No tiene vacunas', 4]
+				  	]), {}, {class: "form-control"}%>
+				</div>
+
+				<div class="form-group col-md-12">
+				  	<label for="sel1">Antiparasitarios:</label>
+				  	<%= f.select :antiparasitic, options_for_select([
+				  		['Con antiparasitarios externos e internos al día', 1], 
+				  		['No recuerdo sobre sus antiparasitarios', 2], 
+				  		['No le he dado antiparasitarios', 3]
+				  	]), {}, {class: "form-control"}%>
+				</div>
+
+				<div class="form-group col-md-12">
+				  	<label for="sel1">Estado de Salud:</label>
+
+				  	<%= f.select :health, options_for_select([
+				  		['Saludable', 1], 
+				  		['Problemas menores', 2], 
+				  		['Problemas severos/crónicos pero tratables y que no ponen en riesgo su vida', 3],
+				  		['En riego vital/enfermedad terminal', 4]
+				  	]), {}, {class: "form-control"}%>
+				</div>
+				<div class="form-group col-md-5">
+				  	<label for="sel1">Situación:</label>
+				  	<%= f.select :status, options_for_select([['Perdido', 1], ['Para Adopción', 2]]), {}, {class: "form-control"}%>
+				</div>
+		</div>
+	</div>
+
+	<div>
+		<%= f.submit "Publicar", :class=>"btn btn-primary btn-block btn-lg", :style=>"margin-bottom: 50px" %>
+	</div>
+<% end %>	

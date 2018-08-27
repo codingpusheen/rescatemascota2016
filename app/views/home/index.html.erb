@@ -1,0 +1,74 @@
+	<div class="row">
+		<div class="col-md-6">
+			<div class="input-group">
+				<%= text_field_tag :search, '', :placeholder => "¿Que Buscar Adoptar?", :class => "form-control" %>
+				<span class="input-group-btn">
+					<button class="btn btn-default" type="button">Buscar</button>
+				</span>   
+			</div>
+		</div>
+	</div>
+
+	<div class="page-header">
+		<h4>Están perdidos!!! ayudanos a encontrarlos</h4>
+	</div>
+	
+	<div class="row">
+		<% @lostpets.each do |pet| %>
+			<div class="col-md-4">
+				<a href="#" class="thumbnail">
+					<%= image_tag "image.png", :width => "350px", :height => "200px"%>
+				</a>
+
+				<%= pet.name.titleize %>
+				<p>Gata, <%= pet.age %> años, esterilizada</p>
+				<a href="#" >Quiero saber mas</a>
+			</div>
+		<%	end %>
+	</div>
+
+	<div class="page-header">
+		<h4>Ellos buscan un hogar</h4>
+	</div>
+	
+	<div class="row">
+		<% @rescuedpets.each do |pet| %>
+			<div class="col-md-4">
+				<a href="#" class="thumbnail">
+					<%= image_tag "image.png", :width => "350px", :height => "200px"%>
+				</a>
+
+				<%= pet.name.titleize %>
+				<p>Gata, <%= pet.age %> años, esterilizada</p>
+				<a href="#" >Quiero saber mas</a>
+			</div>
+		<%	end %>
+	</div>
+
+	</br><h3 class="text-center"><a href="#">Haz click aquí para saber de mas animalitos que buscan hogar</a></h3>
+
+	<div class="page-header">
+		<h4>Ya encontraron casa!</h4>
+	</div>
+	<div class="row">
+		<% @adoptedpets.each do |pet| %>
+			<div class="col-md-4">
+				<a href="#" class="thumbnail">
+					<%= image_tag "image.png", :width => "350px", :height => "200px"%>
+				</a>
+
+				<p><%= pet.name.titleize %>, Ya duerme en una calentita casa</p>
+				<a href="#" >Conoce su historia</a>
+			</div>
+		<% end %>
+	</div>
+
+			<div class="page-header">
+		<h4>Ultimas Noticias</h4>
+	</div>
+		<div class="alert alert-success">
+			Facebook: Facebook: Pitilla necesita urgente un hogar, correo@correo.cl <a href="#" >Compartir</a>
+		</div>
+		<div class="alert alert-info">
+			Twitter: Gata bebé llamada Nutella abandonada en la calle, RT porfavor. <a href="#" >Compartir</a>
+		</div> 

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rescatemascota</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="container">
+
+     <!-- The justified navigation menu is meant for single line per list item.
+     Multiple lines will require custom code not provided by Bootstrap. -->
+     <div class="masthead">
+      <div><%= image_tag "CompanionAnimalBanner.jpg", :class => "img-responsive center-block" %></div>
+      <h1 class="jumbotron">Adopta</h1>
+      <p class="text-center">Plataforma de Adopción y Rescate de Mascotas Domésticas</p>
+      <nav>
+        <ul class="nav nav-justified">
+         <li><a href="/">Inicio</a></li>
+         <li><a href="/search/">Busqueda</a></li>
+         <li><a href="/publish/">Publícate</a></li>
+         <li><a href="/home/who">Nosotros</a></li>
+         <li><a href="#">Contáctanos</a></li>
+         <li><a href="/home/friends">Amigos</a></li>	
+       </ul>
+     </nav>
+   </div>
+ </br>
+
+ <%= yield %>
+
+</div>	
+
+</body>
+</html>
